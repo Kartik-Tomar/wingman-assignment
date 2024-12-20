@@ -5,17 +5,30 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary: #115f57;
+  --secondary: #CCFBEF;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.side-nav-icon {
+  fill: #CCFBEF;
+}
+
+.side-nav-icon-btn:hover {
+  cursor: pointer;
+  .side-nav-icon {
+    fill: #115E56
+  }
+}
+
+.side-nav-icon-btn-active {
+  background-color: #fff;
+  .side-nav-icon {
+    fill: #115E56
+  }
 }
