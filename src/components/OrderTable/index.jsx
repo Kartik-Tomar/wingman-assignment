@@ -1,6 +1,9 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 
 const OrderTable = ({ data }) => {
+  const [tableData, settableData] = useState(data);
   return (
     <div
       className="w-full"
@@ -8,6 +11,7 @@ const OrderTable = ({ data }) => {
         boxShadow: "0px 5px 22px 0px rgba(0, 0, 0, 0.04)",
         border: "1px solid rgb(238, 238, 238)",
         borderRadius: "20px",
+        overflow: "auto"
       }}
     >
       <table
@@ -42,7 +46,7 @@ const OrderTable = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
+          {tableData.map((item) => (
             <tr key={item.id}>
               <td className="font-normal p-5">
                 <div className="flex items-center">
